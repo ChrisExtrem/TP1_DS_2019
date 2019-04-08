@@ -11,13 +11,22 @@ package modelo;
  */
 public class Ciudad {
     //atributo//
-    String nombre;
-    public Paquete origen;
+    private String nombre;
     
     //contructor//
-     public Ciudad(String nombre, Paquete origen) {
+
+    public Ciudad(String nombre) {
         this.nombre = nombre;
-        this.origen = origen;
+    }
+    
+    //metodos
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

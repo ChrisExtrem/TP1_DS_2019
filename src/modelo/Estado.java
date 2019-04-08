@@ -5,7 +5,6 @@
  */
 package modelo;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -13,5 +12,4 @@ import java.util.ArrayList;
  */
 public enum Estado {
     Activo,Inactivo,Cancelado;
-    private ArrayList<Paquete> paquete; //cuando hay multiplicidad 0...*
 }

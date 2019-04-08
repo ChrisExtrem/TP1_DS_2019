@@ -10,9 +10,42 @@ package modelo;
  * @author Cesar
  */
 public class Servicio {
-    String desde;
-    String hasta;
-    Float precioEspecial;
+    //atributos
+    private int desde;
+    private int hasta;
+    private Float precioEspecial;
+
+    //constructores
+    public Servicio(int desde, int hasta, Float precioEspecial) {
+        this.desde = desde;
+        this.hasta = hasta;
+        this.precioEspecial = precioEspecial;
+    }
+    
+    //metodos
+    public int getDesde() {
+        return desde;
+    }
+
+    public void setDesde(int desde) {
+        this.desde = desde;
+    }
+
+    public int getHasta() {
+        return hasta;
+    }
+
+    public void setHasta(int hasta) {
+        this.hasta = hasta;
+    }
+
+    public Float getPrecioEspecial() {
+        return precioEspecial;
+    }
+
+    public void setPrecioEspecial(Float precioEspecial) {
+        this.precioEspecial = precioEspecial;
+    }
     
     
 }

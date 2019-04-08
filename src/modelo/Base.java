@@ -10,6 +10,31 @@ package modelo;
  * @author Cesar
  */
 public class Base {
-    String descripcion;
-    int cantidadPersonas;
+    private String descripcion;
+    private int cantidadPersonas;
+
+    public Base(String descripcion, int cantidadPersonas) {
+        this.descripcion = descripcion;
+        this.cantidadPersonas = cantidadPersonas;
+    }
+
+    public int getCantidadPersonas() {
+        return cantidadPersonas;
+    }
+
+    public void setCantidadPersonas(int cantidadPersonas) {
+        this.cantidadPersonas = cantidadPersonas;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    
+    
+    
 }
