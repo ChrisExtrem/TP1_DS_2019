@@ -4,11 +4,8 @@
  * and open the template in the editor.
  */
 package presentador;
+//Este es un comentario
 
-/**
- *
- * @author Cesar
- */
 public class Principal {
 
     /**
