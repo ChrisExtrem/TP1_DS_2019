@@ -11,12 +11,14 @@ package modelo;
  */
 public class Ciudad {
     //atributo//
+    private int cod;
     private String nombre;
     
     //contructor//
 
-    public Ciudad(String nombre) {
+    public Ciudad(int cod,String nombre) {
         this.nombre = nombre;
+        this.cod=cod;
     }
     
     //metodos

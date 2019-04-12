@@ -10,5 +10,19 @@ package modelo;
  * @author Cesar
  */
 public class Tarifa {
-    float precio;
+    private float precio;
+
+    public Tarifa(float precio) {
+        this.precio = precio;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+    
+    
 }

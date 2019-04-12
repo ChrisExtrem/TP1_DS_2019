@@ -5,18 +5,34 @@
  */
 package vista;
 
+import interfaz.IPrincipal;
+import java.util.ArrayList;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import modelo.Paquete;
+import presentador.PresentadorPrincipal;
+
 /**
  *
  * @author Admin
  */
-public class Principal extends javax.swing.JFrame {
+public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
 
+    private PresentadorPrincipal presentador;
+    private VCrear vcrear;
+    private ArrayList<Paquete> lista;
+    private DefaultTableModel model;
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public VPrincipal() {
         initComponents();
+        this.presentador=new PresentadorPrincipal(this);
+        this.presentador.actualizarPaquetes();
+        
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,7 +44,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPaquetes = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -37,28 +53,37 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblPaquetes);
 
         jButton1.setText("Ver");
 
         jButton2.setText("Activar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Crear");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Desactivar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Cancelar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +124,29 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        vcrear=new VCrear(this,true);
+        vcrear.setLocationRelativeTo(null);
+        vcrear.setVisible(true);
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.presentador.activarPaquete();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.presentador.desactivarPaquete();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.presentador.cancelarPaquete();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -116,22 +164,23 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+          //  public void run() {
+            //    new VPrincipal().setVisible(true);
+         //   }
+       // });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -141,6 +190,50 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblPaquetes;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cargarPaquetes(ArrayList<Paquete> lista) {
+        model = new DefaultTableModel();
+        Object []linea = new Object[5];
+        
+        //Agregar Columnas
+        model.addColumn("Nro");
+        model.addColumn("Nombre");
+        model.addColumn("Días");
+        model.addColumn("Servicios");
+        model.addColumn("Precio Base Doble");
+        
+        //Recorrer lista
+        for(Paquete elemento: lista)
+        {
+            linea[0]=elemento.getNumero();
+            linea[1]=elemento.getNombre();
+            linea[2]=elemento.getDias();
+            linea[3]=elemento.getCantidadServicios();
+            linea[4]=elemento.getPrecioTarifas(2);
+            
+            //Agregar al modelo
+            model.addRow(linea);
+        }
+        
+        //Setear la Tabla
+        tblPaquetes.setModel(model);
+    }
+
+    @Override
+    public int getIndexSeleccionada() {
+        return this.tblPaquetes.getSelectedRow();
+    }
+
+    @Override
+    public Object getPaqueteSelecionado(int index) {
+        return this.tblPaquetes.getModel().getValueAt(0, index);
+    }
+
+    
 }
+
+
+

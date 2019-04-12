@@ -24,6 +24,7 @@ public class Paquete {
     private ArrayList<Ciudad> destinos;
     private ArrayList<Tarifa> tarifas;
     private Estado estado;
+    private ArrayList<Servicio> servicios;
 
     //constructores
 
@@ -129,6 +130,30 @@ public class Paquete {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public ArrayList<Servicio> getServicios() {
+        return servicios;
+    }
+
+    public int getCantidadServicios()
+    {
+        int result;
+        if(servicios==null)
+        {
+            result= 0;
+        }else{
+            result=servicios.size();
+        }
+        return result;
+    }
+    
+    public void setServicios(ArrayList<Servicio> servicios) {
+        this.servicios = servicios;
+    }
+
+    public Object getPrecioTarifas(int i) {
+        return i;
     }
     
 }

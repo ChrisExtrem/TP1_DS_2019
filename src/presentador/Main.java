@@ -6,13 +6,24 @@
 package presentador;
 //Este es un comentario
 
-public class Principal {
+import vista.VPrincipal;
+
+
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //Inicializar Repositorios
+        //Cargar repositorios con datos
+        //Inicializar Vista Principal
+        VPrincipal vprincipal = new VPrincipal();
+        vprincipal.setTitle("Pantalla Principal");
+        vprincipal.setLocationRelativeTo(null);
+        vprincipal.setVisible(true);
+        
     }
     
 }
