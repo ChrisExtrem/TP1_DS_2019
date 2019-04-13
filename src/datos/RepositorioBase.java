@@ -15,7 +15,7 @@ import modelo.Base;
 public class RepositorioBase {
     private static ArrayList<Base> base = new ArrayList<Base>();
 
-    public static ArrayList<Base> getPaquetes() {
+    public static ArrayList<Base> getBase() {
         
         return base;
     }

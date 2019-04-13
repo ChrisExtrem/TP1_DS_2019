@@ -6,7 +6,9 @@
 package vista;
 
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import modelo.Ciudad;
+import modelo.Paquete;
 import presentador.PresentadorCrear;
 
 /**
@@ -438,5 +440,6 @@ public class VCrear extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
-
+  
+    
 }

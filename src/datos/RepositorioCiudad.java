@@ -15,7 +15,7 @@ import modelo.Ciudad;
 public class RepositorioCiudad {
      private static ArrayList<Ciudad> ciudad = new ArrayList<Ciudad>();
 
-    public static ArrayList<Ciudad> getPaquetes() {
+    public static ArrayList<Ciudad> getCiudad() {
         
         return ciudad;
     }

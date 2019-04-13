@@ -5,20 +5,18 @@
  */
 package presentador;
 
-import vista.VCrear;
+import interfaz.IPrincipal;
+import vista.*;
 
 /**
  *
  * @author Admin
  */
 public class PresentadorCrear {
-
+      
     public void guardar() {
          //To change body of generated methods, choose Tools | Templates.
     }
     
-    public void cargarComb() {
-         
-    }
     
 }
