@@ -21,6 +21,10 @@ public class Ciudad {
         this.cod=cod;
     }
     
+      public Ciudad(String nombre) {
+        this.nombre = nombre;
+    }
+    
     //metodos
 
     public String getNombre() {

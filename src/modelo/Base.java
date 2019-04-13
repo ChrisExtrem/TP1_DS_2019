@@ -12,12 +12,15 @@ package modelo;
 public class Base {
     private String descripcion;
     private int cantidadPersonas;
-
+    //constructor
     public Base(String descripcion, int cantidadPersonas) {
         this.descripcion = descripcion;
         this.cantidadPersonas = cantidadPersonas;
     }
-
+     public Base(String descripcion) {
+        this.descripcion = descripcion;
+    }
+     
     public int getCantidadPersonas() {
         return cantidadPersonas;
     }

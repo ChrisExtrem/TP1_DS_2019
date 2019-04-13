@@ -32,7 +32,7 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarById(nroPaquete);
+        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
         if(paquete.getEstado()==Estado.Cancelado){
             //Advertir que no se puede cambiar
         }else{
@@ -45,7 +45,7 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarById(nroPaquete);
+        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
         if(paquete.getEstado()==Estado.Cancelado){
             //Advertir que no se puede cambiar
         }else{
@@ -58,7 +58,7 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarById(nroPaquete);
+        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
         RepositorioPaquetes.setEstadoById(nroPaquete,Estado.Inactivo);
     }
 

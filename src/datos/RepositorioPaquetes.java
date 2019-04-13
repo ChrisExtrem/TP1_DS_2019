@@ -24,15 +24,19 @@ public class RepositorioPaquetes {
         return paquetes;
     }
     
-    public static void agregarPaquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado)
+    //Metodos
+    public static void agregarPaquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado)
     {
-        Paquete nuevo = new Paquete(numero,nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,tarifas,estado);
+        Paquete nuevo = new Paquete(nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,tarifas,estado);
         paquetes.add(nuevo);
     }
-    
-    
-    public static Paquete buscarById(int id){
-        return null;
+        
+    public static Paquete buscarBynro(int numero){
+         Paquete pq = null;
+        for(Paquete p : paquetes){
+            if(p.getNumero()==numero) pq=p;
+        }
+        return pq;
     }
 
     public static void setEstadoById(int nroPaquete, Estado estado) {

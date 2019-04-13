@@ -41,7 +41,19 @@ public class Paquete {
         this.tarifas = tarifas;
         this.estado = estado;
     }
-    
+      public Paquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.itinerario = itinerario;
+        this.condicionesComerciales = condicionesComerciales;
+        this.dias = dias;
+        this.noches = noches;
+        this.origen = origen;
+        this.destinos = destinos;
+        this.tarifas = tarifas;
+        this.estado = estado;
+    }
+
     //metodos
 
     public int getNumero() {

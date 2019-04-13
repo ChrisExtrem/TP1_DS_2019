@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         //Inicializar Repositorios
-        RepositorioPaquetes.agregarPaquete(1,"HawaiPack","Descripcion","Intinerario","CondComerciales",2,3,new Ciudad(1,"Roma"),null,null,Estado.Inactivo);
+        RepositorioPaquetes.agregarPaquete("HawaiPack","Descripcion","Intinerario","CondComerciales",2,3,new Ciudad(1,"Roma"),null,null,Estado.Inactivo);
         //Cargar repositorios con datos
         //Inicializar Vista Principal
         VPrincipal vprincipal = new VPrincipal();
