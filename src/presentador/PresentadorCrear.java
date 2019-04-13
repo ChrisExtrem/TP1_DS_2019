@@ -17,5 +17,8 @@ public class PresentadorCrear {
          //To change body of generated methods, choose Tools | Templates.
     }
     
+    public void cargarComb() {
+         
+    }
     
 }

@@ -6,7 +6,10 @@
 package presentador;
 //Este es un comentario
 
+import datos.RepositorioBase;
+import datos.RepositorioCiudad;
 import datos.RepositorioPaquetes;
+import datos.RepositorioTarifa;
 import modelo.Ciudad;
 import modelo.Estado;
 import vista.VPrincipal;
@@ -20,8 +23,23 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         //Inicializar Repositorios
-        RepositorioPaquetes.agregarPaquete("HawaiPack","Descripcion","Intinerario","CondComerciales",2,3,new Ciudad(1,"Roma"),null,null,Estado.Inactivo);
-        //Cargar repositorios con datos
+        RepositorioPaquetes.agregarPaquete("Cordoba","Descripcion","Intinerario","CondComerciales",7,3,new Ciudad(1,"Villa Gral Belgrano"),null,null,Estado.Inactivo);
+        RepositorioPaquetes.agregarPaquete("Mendoza","Descripcion","Intinerario","CondComerciales",5,3,new Ciudad(2,"San Rafael"),null,null,Estado.Inactivo);
+        RepositorioPaquetes.agregarPaquete("Buenos Aires","Descripcion","Intinerario","CondComerciales",10,3,new Ciudad(3,"Palermo"),null,null,Estado.Inactivo);
+        RepositorioBase.agregarBase("Simple");
+        RepositorioBase.agregarBase("Doble");
+        RepositorioBase.agregarBase("Triple");
+        RepositorioBase.agregarBase("Cuadruple");
+        RepositorioBase.agregarBase("Quintuple");
+        RepositorioBase.agregarBase("Sextuple");
+        RepositorioCiudad.agregarCiudad("Buenos Aires");
+        RepositorioCiudad.agregarCiudad("Cordoba");
+        RepositorioCiudad.agregarCiudad("Mendoza");
+        RepositorioCiudad.agregarCiudad("Santa Fe");
+        RepositorioCiudad.agregarCiudad("Ushuaia");
+        RepositorioTarifa.agregarTarifa(1000F);
+                
+//Cargar repositorios con datos
         //Inicializar Vista Principal
         VPrincipal vprincipal = new VPrincipal();
         vprincipal.setTitle("Pantalla Principal");

@@ -21,7 +21,7 @@ public class RepositorioBase {
     }
     
     //Metodos
-    public static void agregarCiudad(String descripcion)
+    public static void agregarBase(String descripcion)
     {
         Base nuevo = new Base(descripcion);
         base.add(nuevo);

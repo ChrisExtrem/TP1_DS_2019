@@ -5,6 +5,8 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import modelo.Ciudad;
 import presentador.PresentadorCrear;
 
 /**
@@ -14,6 +16,7 @@ import presentador.PresentadorCrear;
 public class VCrear extends javax.swing.JDialog {
 
     private PresentadorCrear presentador;
+    private ArrayList<Ciudad> miArrayList;
     /**
      * Creates new form VCrear2
      */
@@ -435,4 +438,5 @@ public class VCrear extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
 }
