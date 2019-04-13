@@ -9,18 +9,27 @@ import java.util.ArrayList;
 import modelo.Ciudad;
 import modelo.Estado;
 import modelo.Paquete;
+import modelo.Tarifa;
 
 /**
  *
  * @author Admin
  */
 public class RepositorioPaquetes {
+    
+    private static ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
 
     public static ArrayList<Paquete> getPaquetes() {
-        ArrayList<Paquete> lista = new ArrayList<Paquete>();
-        lista.add(new Paquete(1,"HawaiPack","Descripcion","Intinerario","CondComerciales",2,3,new Ciudad(1,"Roma"),null,null,Estado.Inactivo));
-        return lista;
+        
+        return paquetes;
     }
+    
+    public static void agregarPaquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado)
+    {
+        Paquete nuevo = new Paquete(numero,nombre,descripcion,itinerario,condicionesComerciales,dias,noches,origen,destinos,tarifas,estado);
+        paquetes.add(nuevo);
+    }
+    
     
     public static Paquete buscarById(int id){
         return null;
