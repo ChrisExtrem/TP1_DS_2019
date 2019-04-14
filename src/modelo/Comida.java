@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import interfaz.IObjetoServicio;
+
 /**
  *
  * @author Cesar
  */
-public class Comida extends Servicio {
+public class Comida extends Servicio implements IObjetoServicio{
     //atributos
     private TipoComida tipo;
 

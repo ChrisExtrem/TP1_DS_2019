@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import interfaz.IObjetoServicio;
+
 /**
  *
  * @author Cesar
  */
-public class Excursion extends Servicio {
+public class Excursion extends Servicio implements IObjetoServicio{
     //atributos
     private String lugar;
     private float seguro;
@@ -18,6 +20,14 @@ public class Excursion extends Servicio {
     public Excursion(int desde, int hasta, Float precioEspecial) {
         super(desde, hasta, precioEspecial);
     }
+
+    public Excursion(int desde, int hasta, Float precioEspecial,String lugar, float seguro) {
+        super(desde, hasta, precioEspecial);
+        this.lugar = lugar;
+        this.seguro = seguro;
+    }
+    
+    
     
 
     //metodos

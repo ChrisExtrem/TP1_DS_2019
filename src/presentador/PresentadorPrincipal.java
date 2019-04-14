@@ -5,7 +5,7 @@
  */
 package presentador;
 
-import datos.RepositorioPaquetes;
+import datos.RepositorioPaquete;
 import interfaz.IPrincipal;
 import java.util.ArrayList;
 import modelo.Estado;
@@ -24,7 +24,7 @@ public class PresentadorPrincipal {
     }
 
     public void actualizarPaquetes() {
-        ArrayList<Paquete> lista=RepositorioPaquetes.getPaquetes();
+        ArrayList<Paquete> lista=RepositorioPaquete.getPaquetes();
         vista.cargarPaquetes(lista);
     }
 
@@ -32,11 +32,11 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
+        Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
         if(paquete.getEstado()==Estado.Cancelado){
             //Advertir que no se puede cambiar
         }else{
-            RepositorioPaquetes.setEstadoById(nroPaquete,Estado.Activo);
+            RepositorioPaquete.setEstadoById(nroPaquete,Estado.Activo);
         }
         
     }
@@ -45,11 +45,11 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
+        Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
         if(paquete.getEstado()==Estado.Cancelado){
             //Advertir que no se puede cambiar
         }else{
-            RepositorioPaquetes.setEstadoById(nroPaquete,Estado.Inactivo);
+            RepositorioPaquete.setEstadoById(nroPaquete,Estado.Inactivo);
         }
         
     }
@@ -58,8 +58,8 @@ public class PresentadorPrincipal {
         int index=vista.getIndexSeleccionada();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
-        Paquete paquete = RepositorioPaquetes.buscarBynro(nroPaquete);
-        RepositorioPaquetes.setEstadoById(nroPaquete,Estado.Inactivo);
+        Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
+        RepositorioPaquete.setEstadoById(nroPaquete,Estado.Inactivo);
     }
 
     

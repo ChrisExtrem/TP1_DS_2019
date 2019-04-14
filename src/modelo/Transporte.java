@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import interfaz.IObjetoServicio;
+
 /**
  *
  * @author Cesar
  */
-public class Transporte extends Servicio{
+public class Transporte extends Servicio implements IObjetoServicio{
     //atributo
     private TipoTransporte tipo;
     private Comodidad comodidad;
@@ -23,6 +25,7 @@ public class Transporte extends Servicio{
         this.tipo = tipo;
         this.comodidad = comodidad;
     }
+
 
 
     public float getSeguro() {

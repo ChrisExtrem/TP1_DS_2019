@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import interfaz.IObjetoServicio;
+
 /**
  *
  * @author Cesar
  */
-public class Alojamiento extends Servicio {
+public class Alojamiento extends Servicio implements IObjetoServicio{
     //atributos
     private Estrella estrella;
     

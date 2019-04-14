@@ -13,26 +13,34 @@ import modelo.Base;
  * @author Cesar
  */
 public class RepositorioBase {
-    private static ArrayList<Base> base = new ArrayList<Base>();
+    private static ArrayList<Base> bases = new ArrayList<Base>();
 
-    public static ArrayList<Base> getBase() {
+    public static ArrayList<Base> getBases() {
         
-        return base;
+        return bases;
     }
     
     //Metodos
-    public static void agregarBase(String descripcion)
+    public static void agregarBase(String descripcion,int cantidad)
     {
-        Base nuevo = new Base(descripcion);
-        base.add(nuevo);
+        Base nuevo = new Base(descripcion,cantidad);
+        bases.add(nuevo);
     }
     
     
     public static Base buscarByDes(String descripcion){
         Base cons = null;
-        for(Base b : base){
+        for(Base b : bases){
             if(b.getDescripcion().equals(descripcion)) cons=b;
         }
         return cons;
+       }
+    
+    public static Base buscarByCantidadPersonas(int cantidadPersonas){
+        Base respuesta = null;
+        for(Base b : bases){
+            if(b.getCantidadPersonas()==cantidadPersonas) respuesta=b;
+        }
+        return respuesta;
        }
 }

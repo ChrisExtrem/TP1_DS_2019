@@ -13,24 +13,24 @@ import modelo.Ciudad;
  * @author Cesar
  */
 public class RepositorioCiudad {
-     private static ArrayList<Ciudad> ciudad = new ArrayList<Ciudad>();
+     private static ArrayList<Ciudad> ciudades = new ArrayList<Ciudad>();
 
-    public static ArrayList<Ciudad> getCiudad() {
+    public static ArrayList<Ciudad> getCiudades() {
         
-        return ciudad;
+        return ciudades;
     }
     
     //Metodos
     public static void agregarCiudad(String nombre)
     {
         Ciudad nuevo = new Ciudad(nombre);
-        ciudad.add(nuevo);
+        ciudades.add(nuevo);
     }
     
     
     public static Ciudad buscarByNom(String nombre){
         Ciudad cons = null;
-        for(Ciudad c : ciudad){
+        for(Ciudad c : ciudades){
             if(c.getNombre().equals(nombre)) cons=c;
         }
         return cons;

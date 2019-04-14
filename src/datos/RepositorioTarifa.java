@@ -6,6 +6,7 @@
 package datos;
 
 import java.util.ArrayList;
+import modelo.Base;
 import modelo.Tarifa;
 
 /**
@@ -13,27 +14,27 @@ import modelo.Tarifa;
  * @author Cesar
  */
 public class RepositorioTarifa {
-     private static ArrayList<Tarifa> tarifa = new ArrayList<Tarifa>();
+     private static ArrayList<Tarifa> tarifas = new ArrayList<Tarifa>();
 
-    public static ArrayList<Tarifa> getTarifa() {
+    public static ArrayList<Tarifa> getTarifas() {
         
-        return tarifa;
+        return tarifas;
     }
     
     //Metodos
-    public static void agregarTarifa(float precio)
+    public static void agregarTarifa(Base base,float precio)
     {
-        Tarifa nuevo = new Tarifa(precio);
-        tarifa.add(nuevo);
+        Tarifa nuevo = new Tarifa(base,precio);
+        tarifas.add(nuevo);
     }
     
     
     public static Tarifa buscarByprec(float precio){
         Tarifa tf = null;
-        for(Tarifa t : tarifa){
+        for(Tarifa t : tarifas){
             if(t.getPrecio()==precio) tf=t;
         }
         return tf;
        }
-     
+        
 }

@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import interfaz.IObjetoServicio;
 import java.util.ArrayList;
 
 /**
@@ -22,13 +23,14 @@ public class Paquete {
     private int noches;
     private Ciudad origen;
     private ArrayList<Ciudad> destinos;
-    private ArrayList<Tarifa> tarifas;
+    private ArrayList<IObjetoServicio> servicios;
+    private ArrayList<Tarifa> tarifas = new ArrayList<Tarifa>();
     private Estado estado;
-    private ArrayList<Servicio> servicios;
+   
 
     //constructores
 
-    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado) {
+    public Paquete(int numero, String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<IObjetoServicio> servicios, ArrayList<Tarifa> tarifas, Estado estado) {
         this.numero = numero;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -38,18 +40,7 @@ public class Paquete {
         this.noches = noches;
         this.origen = origen;
         this.destinos = destinos;
-        this.tarifas = tarifas;
-        this.estado = estado;
-    }
-      public Paquete(String nombre, String descripcion, String itinerario, String condicionesComerciales, int dias, int noches, Ciudad origen, ArrayList<Ciudad> destinos, ArrayList<Tarifa> tarifas, Estado estado) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.itinerario = itinerario;
-        this.condicionesComerciales = condicionesComerciales;
-        this.dias = dias;
-        this.noches = noches;
-        this.origen = origen;
-        this.destinos = destinos;
+        this.servicios = servicios;
         this.tarifas = tarifas;
         this.estado = estado;
     }
@@ -144,9 +135,7 @@ public class Paquete {
         this.estado = estado;
     }
 
-    public ArrayList<Servicio> getServicios() {
-        return servicios;
-    }
+    
 
     public int getCantidadServicios()
     {
@@ -160,12 +149,26 @@ public class Paquete {
         return result;
     }
     
-    public void setServicios(ArrayList<Servicio> servicios) {
-        this.servicios = servicios;
+    
+
+    public float getPrecioTarifaByCantidadPersonas(int cantidad) {
+        float result=0F;
+        for(Tarifa t: this.tarifas)
+        {
+            if(t.getBase().getCantidadPersonas()==cantidad){
+                result=t.getPrecio();
+            }
+        }
+        return result;
+        
     }
 
-    public Object getPrecioTarifas(int i) {
-        return i;
+    public ArrayList<IObjetoServicio> getServicios() {
+        return servicios;
+    }
+
+    public void setServicios(ArrayList<IObjetoServicio> servicios) {
+        this.servicios = servicios;
     }
     
 }

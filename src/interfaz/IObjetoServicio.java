@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package interfaz;
 
 /**
  *
- * @author Cesar
+ * @author Admin
  */
-public enum TipoTransporte {
-    Omnibus,Avion;
+public interface IObjetoServicio {
+    
 }

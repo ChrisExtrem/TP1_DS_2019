@@ -212,7 +212,7 @@ public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
             linea[1]=elemento.getNombre();
             linea[2]=elemento.getDias();
             linea[3]=elemento.getCantidadServicios();
-            linea[4]=elemento.getPrecioTarifas(2);
+            linea[4]=elemento.getPrecioTarifaByCantidadPersonas(2);
             
             //Agregar al modelo
             model.addRow(linea);
