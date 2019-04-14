@@ -29,20 +29,20 @@ public class PresentadorPrincipal {
     }
 
     public void activarPaquete() {
-        int index=vista.getIndexSeleccionada();
+        int index=vista.getIndexSeleccionado();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
         Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
-        if(paquete.getEstado()==Estado.Cancelado){
+        if(paquete.getEstado().equals(Estado.Cancelado)){
             //Advertir que no se puede cambiar
         }else{
             RepositorioPaquete.setEstadoById(nroPaquete,Estado.Activo);
         }
-        
+        actualizarPaquetes();
     }
     
     public void desactivarPaquete() {
-        int index=vista.getIndexSeleccionada();
+        int index=vista.getIndexSeleccionado();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
         Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
@@ -51,15 +51,16 @@ public class PresentadorPrincipal {
         }else{
             RepositorioPaquete.setEstadoById(nroPaquete,Estado.Inactivo);
         }
-        
+        actualizarPaquetes();
     }
 
     public void cancelarPaquete() {
-        int index=vista.getIndexSeleccionada();
+        int index=vista.getIndexSeleccionado();
         Object valor = vista.getPaqueteSelecionado(index);
         int nroPaquete=(int)valor;
         Paquete paquete = RepositorioPaquete.buscarById(nroPaquete);
-        RepositorioPaquete.setEstadoById(nroPaquete,Estado.Inactivo);
+        RepositorioPaquete.setEstadoById(nroPaquete,Estado.Cancelado);
+        actualizarPaquetes();
     }
 
     

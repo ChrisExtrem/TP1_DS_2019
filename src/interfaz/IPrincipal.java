@@ -14,7 +14,7 @@ import modelo.Paquete;
  */
 public interface IPrincipal {
     public void cargarPaquetes(ArrayList<Paquete> lista);
-    public int getIndexSeleccionada();
+    public int getIndexSeleccionado();
     public Object getPaqueteSelecionado(int index);
 }
 

@@ -157,6 +157,7 @@ public class Paquete {
         {
             if(t.getBase().getCantidadPersonas()==cantidad){
                 result=t.getPrecio();
+                break;
             }
         }
         return result;

@@ -43,7 +43,6 @@ public class RepositorioPaquete {
     }
 
     public static void setEstadoById(int nroPaquete, Estado estado) {
-        Paquete pq = null;
         for(Paquete p : paquetes){
             if(p.getNumero()==nroPaquete) p.setEstado(estado);
         }

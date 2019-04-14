@@ -196,7 +196,7 @@ public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
     @Override
     public void cargarPaquetes(ArrayList<Paquete> lista) {
         model = new DefaultTableModel();
-        Object []linea = new Object[5];
+        Object []linea = new Object[6];
         
         //Agregar Columnas
         model.addColumn("Nro");
@@ -204,6 +204,7 @@ public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
         model.addColumn("Días");
         model.addColumn("Servicios");
         model.addColumn("Precio Base Doble");
+        model.addColumn("Estado");
         
         //Recorrer lista
         for(Paquete elemento: lista)
@@ -213,6 +214,7 @@ public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
             linea[2]=elemento.getDias();
             linea[3]=elemento.getCantidadServicios();
             linea[4]=elemento.getPrecioTarifaByCantidadPersonas(2);
+            linea[5]=elemento.getEstado();
             
             //Agregar al modelo
             model.addRow(linea);
@@ -223,13 +225,13 @@ public class VPrincipal extends javax.swing.JFrame implements IPrincipal {
     }
 
     @Override
-    public int getIndexSeleccionada() {
+    public int getIndexSeleccionado() {
         return this.tblPaquetes.getSelectedRow();
     }
 
     @Override
     public Object getPaqueteSelecionado(int index) {
-        return this.tblPaquetes.getModel().getValueAt(0, index);
+        return this.tblPaquetes.getModel().getValueAt(index, 0);
     }
 
     

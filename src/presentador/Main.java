@@ -59,8 +59,8 @@ public class Main {
         Tarifa tarifa1 = new Tarifa(RepositorioBase.buscarByCantidadPersonas(2),14.50F);
         tarifas1.add(tarifa1);
         RepositorioPaquete.agregarPaquete("Cordoba","Descripcion","Intinerario","CondComerciales",7,3,new Ciudad(1,"Villa Gral Belgrano"),listaDeCiudades,servicios1,tarifas1,Estado.Inactivo);
-        RepositorioPaquete.agregarPaquete("Mendoza","Descripcion","Intinerario","CondComerciales",5,3,new Ciudad(2,"San Rafael"),listaDeCiudades,servicios1,tarifas1,Estado.Inactivo);
-        RepositorioPaquete.agregarPaquete("Buenos Aires","Descripcion","Intinerario","CondComerciales",10,3,new Ciudad(3,"Palermo"),listaDeCiudades,servicios1,tarifas1,Estado.Inactivo); 
+        RepositorioPaquete.agregarPaquete("Mendoza","Descripcion","Intinerario","CondComerciales",5,3,new Ciudad(2,"San Rafael"),listaDeCiudades,servicios1,tarifas1,Estado.Cancelado);
+        RepositorioPaquete.agregarPaquete("Buenos Aires","Descripcion","Intinerario","CondComerciales",10,3,new Ciudad(3,"Palermo"),listaDeCiudades,servicios1,tarifas1,Estado.Activo); 
                 
 //Cargar repositorios con datos
         //Inicializar Vista Principal
